@@ -14,9 +14,6 @@ function App() {
 
   const options = Object.keys(currencyInfo)
 
-  console.log('Currency Info:', currencyInfo)
-  console.log('Options:', options)
-
   const swap = () =>{
     setFrom(to)
     setTo(from)
@@ -49,7 +46,7 @@ function App() {
                                 label="From"
                                 amount={amount}
                                 currencyOptions={options}
-                                onCurrencyChange={(currency) => setFrom(currency)}
+                                onCurrencyChange={(currency) => setAmount(amount)}
                                 selectCurrency={from}
                                 onAmountChange={(amount) => setAmount(amount)}
                             />
@@ -70,9 +67,9 @@ function App() {
                                 amount={convertedAmount}
                                 currencyOptions={options}
                                 onCurrencyChange={(currency) => setTo(currency)}
-                                selectCurrency={to}
+                                selectCurrency={from}
                                 amountDisable
-
+                                
                             />
                         </div>
                         <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
